@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers/app-ctrl.js"></script>
+    <script src="directives/ping-pong.js"></script>
+</head>
+<body ng-app="app" ng-controller="appController as vm">
+    <h1>{{vm.Title}}</h1>
+    <ping-pong></ping-pong>
+</body>
+</html>
