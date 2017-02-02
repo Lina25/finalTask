@@ -10,8 +10,8 @@
             template: "<canvas width='960' height='400'></canvas>",
             link: function (scope, element, attribute) {
                 var game, context, ball, canvas, player;
-                function rect(color, x, y, width, height) {
-                    this.color = color; //rect color
+                function rectangle(color, x, y, width, height) {
+                    this.color = color; //rectangle color
                     this.x = x;
                     this.y = y;
                     this.width = width;
@@ -45,18 +45,18 @@
                 }
 
                 function update() {
-                    //рух по осі у
+                    //move by Y-axis
                     if (ball.y < 0 || ball.y + ball.height > game.height) {
                         ball.vY = -ball.vY;
                     }
-                    //рух по осі х
+                    //move by X-axis
                     if (ball.x < 0) {
                         ball.vX = -ball.vX;
                     }
                     if (ball.x + ball.width > game.width) {
                         ball.vX = -ball.vX;
                     }
-                    // вдаряє по ракетці
+                  
                     if ((knock(player, ball) && ball.vX > 0)) {
                         ball.vX = -ball.vX;
                     }
@@ -78,12 +78,12 @@
                     ball.draw();
                 }
 
-                game = new rect("#E37222", 0, 0, 480, 320);
+                game = new rectangle("#E37222", 0, 0, 480, 320);
                 //player
-                player = new rect("#fff", game.width - 30, game.height / 2 - 40, 20, 80);
+                player = new rectangle("#565656", game.width - 30, game.height / 2 - 40, 20, 80);
 
                 // ball, score
-                ball = new rect("#fff", 40, game.height / 2 - 10, 20, 20);
+                ball = new rectangle("#FEFEFE", 40, game.height / 2 - 10, 20, 20);
                 ball.vY = 6; //Math.floor(Math.random()*12 - 6); 
                 ball.vX = 6; //7 - Math.abs(ball.vY);
 
